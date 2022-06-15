@@ -1,9 +1,23 @@
 const User = require("../models/user");
 
 const UsersController = {
+  Index: (req, res) => {
+    User.find()
+      .exec((err, users) => {
+        if (err) {
+          throw err;
+        }
+        let reversedUsers = users.reverse();
+        res.render("users/index", {
+          session: req.session.user,
+          users: reversedUsers,
+        });
+      })
+  },
+
   New: (req, res) => {
     res.render("users/new", {
-      //read the above as our response is to render the users/new page
+      //read the above as: our response is to render the users/new page
       session: req.session.user,
       error: req.flash("error"),
     });
@@ -37,11 +51,12 @@ const UsersController = {
         if (err.code === 11000) req.flash("error", "Email already exists");
 
         res.redirect("/users/new");
-        //6. Unlike the get request, which is simply rendering the page, this is handling a 
-//post request. Request has all the form data that the user submitted. We want to get this
-//data to the database.
+
       });
   },
 };
+ //6. Unlike the get request, which is simply rendering the page, this is handling a 
+//post request. Request has all the form data that the user submitted. We want to get this
+//data to the database.
 
 module.exports = UsersController;

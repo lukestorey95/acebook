@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-
+//see the model as part of the database, setting the rules for the database 
 const UserSchema = new mongoose.Schema({
+  //user schema can be seen as the outline/outlay of the database 
   name: {
     type: String,
     required: true,

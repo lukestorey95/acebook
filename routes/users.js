@@ -3,6 +3,7 @@ const router = express.Router();
 
 const UsersController = require("../controllers/users");
 
+router.get("/", UsersController.Index);
 router.get("/new", UsersController.New);
 //2. when someone is directed to users/new, a get request is sent 
 //to the server. UsersController.New is how we determine how we want to 
