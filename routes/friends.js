@@ -3,7 +3,7 @@ const router = express.Router();
 
 const UsersController = require("../controllers/users");
 
-router.get("/friends", UsersController.Index);
-router.post("/friends", UsersController.AddFriend);
+router.get("/", UsersController.Index);
+router.post("/", UsersController.AddFriend);
 
 module.exports = router;

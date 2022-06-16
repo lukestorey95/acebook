@@ -83,9 +83,10 @@ const UsersController = {
         }
 
       const filter2 = { _id: req.session.user._id };
-      //filter = the id of the person the logged-in person wants to be friends with
-      //filter = the target
+      //filter2 = the id of the logged-in person 
+      //filter2 = i.e. the target
       const update2 = {$push: {friends: req.body.user_id}};
+      //update2 = push the id of the desired friend into the friends 'column' of the logged in person
 
       User.findOneAndUpdate(filter2, update2, {new: true, useFindAndModify: false}, (err) => {
         if (err) {

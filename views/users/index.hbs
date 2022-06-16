@@ -8,10 +8,12 @@
           {{#each users}}
             <div id="add-friends-name-column">
               {{this.name}}
-              {{this.profile_picture}}
+              
+              <img src={{this.profile_picture}}>
+              
             </div>
             <div id="add-friends-button-column">
-              <form id="add-friend-form" action="/users/add-friend" method="post">
+              <form id="add-friend-form" action="/friends" method="post">
                 <input id="user_id" name="user_id" type="hidden" value="{{this._id}}">
                 {{!-- the value will constitute the request in the controller? --}}
                 <button id="add-friend-button" class="add-friend-button new-post-link w3-button w3-theme w3-margin-bottom w3-round-large">Add {{this.name}} as a friend</button>

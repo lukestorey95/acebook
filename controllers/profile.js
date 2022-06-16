@@ -56,6 +56,7 @@ const ProfileController = {
           }
         );
       } catch (error) {
+        console.log(error);
         return res.json({ error: "Failed to upload" });
       }
     });
