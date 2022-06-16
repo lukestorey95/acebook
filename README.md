@@ -179,10 +179,19 @@ I would like t be able to publish photos.
 
 ## Wireframes
 -------
-
-[screenshots]
+![Wireframe 1](public/images/New%20Wireframe%201.png)
+![Wireframe 2](public/images/New%20Wireframe%202.png)
+![Wireframe 3](public/images/New%20Wireframe%203.png)
+![Wireframe 4](public/images/New%20Wireframe%204.png)
+![Wireframe 5](public/images/New%20Wireframe%205.png)
+![Wireframe 6](public/images/New%20Wireframe%206.png)
 
 ### Edge cases
+
+* Sign up with invalid input
+* Sign up with an already used email
+* Sign in with invalid input
+* Try to access timeline or profile page when logged out
 
 ## Future improvements
 --------
