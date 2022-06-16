@@ -2,9 +2,9 @@
 
 [![Tests](https://github.com/lukestorey95/acebook/actions/workflows/test.yml/badge.svg)](https://github.com/lukestorey95/acebook/actions/workflows/test.yml)
 
+
 ## Contributors
 -------
-
 - [Alexandros Papagiannis](https://github.com/Alexandros91)
 - [Erlantz Ramos Sanchez](https://github.com/ErlantzR)
 - [Farzan Imanzadeh](https://github.com/Farzan-I)
@@ -19,6 +19,26 @@
 For the penultimate engineering project during Weeks 8 and 9 of the Makers Academy hybrid course, we were tasked with developing a [Facebook](https://en-gb.facebook.com/) clone, known as Acebook. Within a team of 7 developers we developed this version that we're proud to present.
 
 
+## Production
+------
+https://lacebook.herokuapp.com/
+
+
+## Demo
+-------
+### Home page
+[screenshot]
+
+### Login page
+[screenshot]
+
+### Sign up page
+
+### Timeline
+
+### Profile page
+
+
 ## Technologies Used
 ------
 
@@ -31,13 +51,9 @@ For the penultimate engineering project during Weeks 8 and 9 of the Makers Acade
 - [Cypress](https://www.cypress.io/) for end-to-end testing.
 - [CSS](https://www.w3.org/Style/CSS/Overview.en.html) for styling of the webpages.
 
-## Card wall
---------
-We used a [Trello](https://trello.com/b/jFmua5rj/lukeingforsuggestions) board to keep track of the features we want to implement. We organised tickets amongst the team and moved the tickets accordingly to demonstrate at what stage that feature's at (To do/In progress/In review etc.).
 
 ## How to run locally
 --------
-
 ### Install Node.js
 
 1. Install Node Version Manager (NVM)
@@ -81,7 +97,6 @@ We used a [Trello](https://trello.com/b/jFmua5rj/lukeingforsuggestions) board to
 2. Browse to [http://localhost:3000](http://localhost:3000)
 
 #### Start test server
-
 The server must be running locally with test configuration for the
 integration tests to pass.
 
@@ -93,7 +108,6 @@ This starts the server on port `3030` and uses the `acebook_test` MongoDB databa
 so that integration tests do not interact with the development server.
 
 ### Test
-
 - Run all tests
   ```
   npm test
@@ -105,22 +119,19 @@ so that integration tests do not interact with the development server.
   npm run test:integration  # integration tests only
   ```
 
-## Demo
--------
-### Home page
-[screenshot]
 
-### Login page
-[screenshot]
+## Card wall
+--------
+We used a [Trello](https://trello.com/b/jFmua5rj/lukeingforsuggestions) board to keep track of the features we want to implement. We organised tickets amongst the team and moved the tickets accordingly to demonstrate at what stage that feature's at (To do/In progress/In review etc.).
 
-### Sign up page
-
-### Timeline
-
-### Profile page
 
 ## Team approach
 ---------
+* Standups every morning at 10:00
+* Regro at 5:30 every evening
+* Pair programming throughotu the whole project
+* Regular check-ins with team members to make sure nobody was left behind
+* Trello board for distributing work and staying on track
 
 ## User stories
 -------
@@ -164,18 +175,56 @@ I would like to see a profile picture attached to each post.
 ```
 As a user, 
 so that I can share photos, 
-I would like t be able to publish photos.
+I would like to be able to publish photos.
+```
+
+### Interactions
+```
+As a user,
+so that I can express how I feel,
+I would like to be able to like posts.
 ```
 
 ```
+As a user,
+so that I can bo gack on what I liked,
+I would like to be able to unlike the post.
+```
 
 ```
+As a user,
+so that I can express myself,
+I would like to be able to comment on posts.
+```
+
+```
+As a user, 
+to interact with other users,
+I would like to be able to see who commented on posts.
+```
+
 
 ## Further User Stories
 -------
+```
+As a user,
+so that I can have friends,
+I would like to be able to send friend requests to other users.
+```
+
+```
+As a user,
+so that I can have friends,
+I would like to be able to accept friend requests from other users.
+```
+
 
 ## MVP
 ------
+* User can sign up, log in and log out
+* User can post a post and delete it
+* User can see all posts in reverse chronological order
+
 
 ## Wireframes
 -------
@@ -184,8 +233,8 @@ I would like t be able to publish photos.
 
 ### Edge cases
 
+
 ## Future improvements
 --------
-
-
-
+* User can see only friends' posts on the timeline
+* User can like and respond to individual comments
