@@ -301,7 +301,7 @@ hr {
 }
 
 .timeline {
-  width: 60%;
+  width: 40%;
 }
 
 /* -----------------Comments box--------------------------------------------------- */
@@ -328,17 +328,13 @@ hr {
 
 #comment-input {
   width: 75%;
-  margin: 0;
-  margin-right: 2rem;
   height: 2rem;
   border-radius: 25px;
   border: none;
   background-color: rgb(206, 206, 206);
-  margin-left: 2rem;
 }
 
 #comment-button {
-  margin: 0;
   height: 2rem;
   background-color: rgb(238, 236, 236);
   font-weight: 600;
@@ -559,4 +555,10 @@ input.input {
   width: 100%;
   border-radius: 8px;
   text-align: center;
+}
+
+.photo-container {
+  overflow: hidden;
+  max-height: 550px;
+  margin-bottom: 20px;
 }

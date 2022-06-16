@@ -10,7 +10,7 @@ describe("Profile", () => {
     // sign in
     cy.get("#email").type("someone@example.com");
     cy.get("#password").type("password");
-    cy.get("#login").click();
+    cy.get("#login-button").click();
 
     // visit the profile page
     cy.get("#profileBtn").click();

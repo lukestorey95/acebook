@@ -36,7 +36,7 @@
 
     <!-- All Posts -->
     {{#each posts}}
-      <div class="grey-div">
+      <div class="grey-div posts">
         <div id="pic-name-container">
           <div class="profile-pic">
             {{#if this.user_id.profile_picture}}
@@ -54,7 +54,9 @@
         <p>{{this.message}}</p>
 
         {{#if this.post_picture}}
-          <img class="posted-picture" src={{this.post_picture}}>
+          <div class="photo-container">
+            <img class="posted-picture" src={{this.post_picture}}>
+          </div>
         {{/if}}
 
         <div class="comments-container">

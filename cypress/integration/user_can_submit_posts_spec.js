@@ -10,7 +10,7 @@ describe("Timeline", () => {
     // sign in
     cy.get("#email").type("someone@example.com");
     cy.get("#password").type("password");
-    cy.get("#login").click();
+    cy.get("#login-button").click();
 
     // submit a post
     cy.contains("Post").click();
@@ -35,7 +35,7 @@ describe("Timeline", () => {
     // sign in
     cy.get("#email").type("someone@example.com");
     cy.get("#password").type("password");
-    cy.get("#login").click();
+    cy.get("#login-button").click();
 
     // submit a post
 
@@ -62,7 +62,7 @@ describe("Timeline", () => {
        // sign in
        cy.get("#email").type("someone@example.com");
        cy.get("#password").type("password");
-       cy.get("#login").click();
+       cy.get("#login-button").click();
 
       // submit an image
       cy.get("#new-post-form").find('[type="file"]').attachFile("raccoon_1.jpg");
