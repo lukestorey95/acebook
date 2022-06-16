@@ -1,0 +1,36 @@
+<body class="background">
+  <div class="whole-page w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <div class="posts w3-container w3-card post-bgc w3-round-xlarge w3-margin">
+      <h1>Make a friend</h1>
+      <div>
+
+        <div class="add-friends-columns-container">
+          {{#each users}}
+            <div id="add-friends-name-column">
+              {{this.name}}
+              {{this.profile_picture}}
+            </div>
+            <div id="add-friends-button-column">
+              <form id="add-friend-form" action="/users/add-friend" method="post">
+                <input id="user_id" name="user_id" type="hidden" value="{{this._id}}">
+                {{!-- the value will constitute the request in the controller? --}}
+                <button id="add-friend-button" class="add-friend-button new-post-link w3-button w3-theme w3-margin-bottom w3-round-large">Add {{this.name}} as a friend</button>
+              </form>
+                {{!-- //need to program what button actually does --}}
+                {{!-- it needs to stay on the page and maybe give a message --}}
+                {{!-- it needs to post the data to the friends column in the user table--}}
+                {{!-- it needs to actually add a friends column to the schema --}}
+                {{!-- when a user submits the (hidden) form by clicking add friend it should create a new object
+                that consists of the user's id and send that to the friends column of the desired friend, it should
+                also create a new object that is the desired friend's id and send that to the user's friends column--}}
+                {{!-- so first create a hidden form--}}
+                {{!-- then give it an id e.g friend_id and give that the value of the user's id--}}
+                {{!-- then use that to create a new object in the controller and send that to the relevant column as described above --}}
+                {{!-- then do the same using the desired friend's id and send that to the user's friends column --}}
+            </div>
+          {{/each}}
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
