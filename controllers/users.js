@@ -75,8 +75,19 @@ const UsersController = {
       //the filter alone? Oh wait! It's defined in the database, right? The _id in the filter is defined
       //based on the info in the post request (i.e. it's what we called user_id there), whereas the _id in the update refers
       //to a target in the database - i.e. we're pushing the info found in the currently logged-in persons user table,
-      //specifically their _id 'column', to the friends 'column' of the desired friend 
+      //specifically their _id 'column', to the friends 'column' of the desired friend. Need to check with the others 
       User.findOneAndUpdate(filter, update, {new: true, useFindAndModify: false}, (err) => {
+        if (err) {
+          console.log(err);
+          throw err;
+        }
+
+      const filter2 = { _id: req.session.user._id };
+      //filter = the id of the person the logged-in person wants to be friends with
+      //filter = the target
+      const update2 = {$push: {friends: req.body.user_id}};
+
+      User.findOneAndUpdate(filter2, update2, {new: true, useFindAndModify: false}, (err) => {
         if (err) {
           console.log(err);
           throw err;
@@ -86,7 +97,7 @@ const UsersController = {
       // here and then run findOneAndUpdate again
         res.status(201).redirect(`/profile/${req.session.user._id}`);
       });
-    // });
+    });
   },    
 };
  //6. Unlike the get request, which is simply rendering the page, this is handling a 
