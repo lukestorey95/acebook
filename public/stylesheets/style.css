@@ -147,8 +147,9 @@
 }
 
 /* Overall Background Colour */
+/*/ignore any changes I might have made here on find-friend branch/*/
 .background {
-  background: linear-gradient(#09111f, #062d3b);
+  background-color: linear-gradient(#09111f, #062d3b);
 }
 
 /* Overall Page Margins */
@@ -529,9 +530,8 @@ input.button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-color: pink;
+  width: 100vw;
+  /* color: linear-gradient(#09111f, #062d3b); */
   margin-top: 100px;
 }
 
@@ -540,8 +540,8 @@ input.button {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 50%;
-  background-color: whitesmoke;
+  width: 35%;
+  min-width: 300px;
 }
 
 .find-friends-title-div {
@@ -550,7 +550,6 @@ input.button {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: cyan;
 }
 
 
@@ -565,7 +564,6 @@ input.button {
   padding-bottom: 10px;
   padding-right: 10px;
   padding-top: 10px;
-  background-color: green;
   flex-wrap: wrap;
 }
 
@@ -578,7 +576,6 @@ input.button {
   padding-top: 2%;
   padding-left: 2%;
   min-width: 50%;
-  background-color: white;
 
 }
 
@@ -594,7 +591,6 @@ input.button {
   min-width: 50%;
   justify-content: center;
   align-items: center;
-  background-color: grey;
 }
 
 /* .add-friends-button {
