@@ -11,5 +11,10 @@ router.get("/new", UsersController.New);
 router.post("/", UsersController.Create);
 //5. when a request is made to this route (i.e. when someone signs up) 
 //the user controller runs create
+router.post("/friend-added", UsersController.AddFriend);
+//confused... not sure I'm using this properly
+//my understanding, if we post to users/add-friend, then we run 
+// AddFriend in the controller to create a friend using data supplied 
+//in the form from which we're making the post request
 
 module.exports = router;

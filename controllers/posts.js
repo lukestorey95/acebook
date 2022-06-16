@@ -10,6 +10,9 @@ const PostsController = {
       .populate("user_id")
       .populate("likes")
       .populate("comments")
+      //populate is being used here to get associated data from
+      //other tables. the id, the likes and the comments are stored in other
+      //tables and linked with an id... need to get them over too
       .exec((err, posts) => {
         if (err) {
           throw err;

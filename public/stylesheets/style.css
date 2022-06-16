@@ -522,3 +522,33 @@ input.button {
   display: flex;
   justify-content: center;
 }
+
+/* ------------------------ADD FRIENDS---------------------- */
+
+#add-friends-name-column {
+  display: flex; 
+  width: 50%;
+  justify-content: left;
+}
+
+#add-friends-button-column {
+  display: flex; 
+  width: 50%;
+}
+
+.add-friends-button {
+
+}
+
+.add-friends-columns-container {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  min-width: 50%;
+  /* justify-content: center; */
+  /* background-color: pink; */
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}

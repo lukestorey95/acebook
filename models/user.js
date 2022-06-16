@@ -17,7 +17,19 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   profile_picture: { type: String, default: null },
+
+  // friends: { 
+  //   type: String,
+  //   default: null
+  // }
+
+  friends:[{
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "User",
+  }],
 });
+//is the above how you write a foreign key for the User table?
+//also is it still a foreign key if it's searching for other users in the same table?
 
 UserSchema.pre("save", function (next) {
   const user = this;

@@ -25,8 +25,8 @@ const UsersController = {
 //CONTROLLER IS THE SERVER FOR THE PURPOSES OF OUR UNDERSTANDING HERE 
 //3. UsersController takes a request and response. Express has things set 
   //up so that when someone lands on a page, it takes a request and expects to 
-  //give a reponse. If you don't give a response in the above function, the user
-  //won't see anything. Our resonse here is simply render the page. 
+  //give a response. If you don't give a response in the above function, the user
+  //won't see anything. Our response here is simply render the page. 
   //The syntax is res.render(page you want to render)
   //in this example we've also provided an optional object with more data that the view
   //might find useful - the session data, and any error messages
@@ -54,6 +54,29 @@ const UsersController = {
 
       });
   },
+
+  AddFriend: (req, res) => {
+  //   const post_id = req.body.post_id;
+    // const friend = new User(req.body);
+    // const friend = req.body; 
+    //is the request whatever is sent via the post method to via the route that leads to AddFriend?
+    User.findOne({_id: req.body.user_id}).exec((err, user) => {
+      if (err) {
+        throw err;
+      }
+  
+      const filter = { _id: user.friends };
+      const update = {$push: {friends_array: [req.session.user._id]}};
+      
+      User.findOneAndUpdate(filter, update, {new: true, useFindAndModify: false}, (err) => {
+        if (err) {
+          console.log(err);
+          throw err;
+        }
+        res.status(201).redirect("/friend-added");
+      });
+    });
+  },    
 };
  //6. Unlike the get request, which is simply rendering the page, this is handling a 
 //post request. Request has all the form data that the user submitted. We want to get this

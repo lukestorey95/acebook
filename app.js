@@ -73,6 +73,7 @@ app.use("/users", usersRouter);
 app.use("/comments", sessionChecker, commentsRouter);
 app.use("/likes", sessionChecker, likesRouter);
 app.use("/profile", sessionChecker, profileRouter);
+app.use("/friend-added", sessionChecker, usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
