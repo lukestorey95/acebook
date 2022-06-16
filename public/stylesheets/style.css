@@ -525,16 +525,75 @@ input.button {
 
 /* ------------------------ADD FRIENDS---------------------- */
 
-#add-friends-name-column {
-  display: flex; 
-  width: 50%;
-  justify-content: left;
-  background-color: white;
+.users-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: pink;
+  margin-top: 100px;
 }
 
-#add-friends-button-column {
-  display: flex; 
+.add-friends-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 50%;
+  background-color: whitesmoke;
+}
+
+.find-friends-title-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: cyan;
+}
+
+
+.add-friends-rows-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* min-width: 100%; */
+  /* justify-content: center; */
+
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  background-color: green;
+  flex-wrap: wrap;
+}
+
+#add-friends-name-and-photo-row {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  flex-direction: column;
+  height: 200px;
+  padding-top: 2%;
+  padding-left: 2%;
+  min-width: 50%;
+  background-color: white;
+
+}
+
+#add-friends-name-row {
+  display: flex;
+  justify-content: right;
+}
+
+#add-friends-button-row {
+  display: flex; 
+  height: 200px;
+  padding-top: 5%;
+  min-width: 50%;
+  justify-content: center;
+  align-items: center;
   background-color: grey;
 }
 
@@ -542,41 +601,6 @@ input.button {
 
 } */
 
-.add-friends-container {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  min-width: 100vw;
-  background-color: whitesmoke;
-}
-
-.users-page {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width: 100vw;
-  min-width: 100vw;
-  background-color: pink;
-  margin-top: 100px;
-}
-
-.add-friends-columns-container {
-  display: flex;
-  flex-direction: row;
-  /* align-items: center; */
-  min-width: 100%;
-  /* justify-content: center; */
-  /* background-color: pink; */
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  background-color: green;
-}
-
-.find-friends-title-div {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  background-color: cyan;
+#friends-align {
+  text-align: center;
 }

@@ -1,22 +1,36 @@
 <body class="background">
-  <div class="whole-page w3-container w3-content" style="max-width:1400px;margin-top:80px">
-    <div class="posts w3-container w3-card post-bgc w3-round-xlarge w3-margin">
-      <h1>Make a friend</h1>
+  <div class="users-page w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <div class="add-friends-container w3-container w3-card post-bgc w3-round-xlarge w3-margin">
+      <div class="find-friends-title-div">
+      
+      <h1 id="friends-align">Find a fwend</h1>
+      
+      </div>
       <div>
 
-        <div class="add-friends-columns-container">
+        <div class="add-friends-rows-container">
           {{#each users}}
-            <div id="add-friends-name-column">
-              {{this.name}}
+            <div id="add-friends-name-and-photo-row">
+              <div id="#add-friends-name-row">
+                {{this.name}}
+              </div>
+              <div id="add-friends-photo-row">
+              {{#if this.profile_picture}}
+            <img alt="Avatar" id="timeline-profile-photo" class="w3-circle" style="width:80px" src={{this.profile_picture}}> 
+          {{else}}
+            <img alt="Avatar" id="timeline-profile-photo" class="w3-circle" style="width:80px" src="/images/cutie-pie.jpeg">
+          {{/if}}
+          </div>
               
-              <img src={{this.profile_picture}}>
+              {{!-- <img src={{this.profile_picture}}> --}}
               
             </div>
-            <div id="add-friends-button-column">
+            
+            <div id="add-friends-button-row">
               <form id="add-friend-form" action="/friends" method="post">
                 <input id="user_id" name="user_id" type="hidden" value="{{this._id}}">
                 {{!-- the value will constitute the request in the controller? --}}
-                <button id="add-friend-button" class="add-friend-button new-post-link w3-button w3-theme w3-margin-bottom w3-round-large">Add {{this.name}} as a friend</button>
+                <button id="add-friend-button" class="add-friend-button new-post-link w3-button w3-theme w3-margin-bottom w3-round-large">Add friend</button>
               </form>
                 {{!-- //need to program what button actually does --}}
                 {{!-- it needs to stay on the page and maybe give a message --}}

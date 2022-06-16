@@ -30,19 +30,18 @@
 
       <div class="flex-container">
         <div class="friends flex-container">
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
-          <div class="friend"></div>
+          {{#each user.friends}}
+        
+
+          <div class="friend">
+            {{this.name}}
+            {{#if this.profile_picture}}
+            <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src={{this.profile_picture}}> 
+          {{else}}
+            <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src="/images/cutie-pie.jpeg">
+          {{/if}}
+          </div>
+          {{/each}}
         </div>
       </div>
     </div>
