@@ -1,78 +1,64 @@
-
-<body class="background"></body>
-
-
-<!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
-  <!-- The Grid -->
-  <div class="w3-row">
-    
-    <!-- Left Column -->
-    <div class="w3-col m3">
-      <!-- Accordion DON'T DELETE FOR NOW!!!!!!!!! -->
-      <br>
+<div class="whole-page-timeline">
+  <div class="timeline">
+    <div class="main-title">
+      <h1>Timeline</h1>
     </div>
-    <!-- End Left Column -->
-    
-    <!-- Middle Column -->
-    <div class="w3-col m7">
-      <div class="w3-row-padding">
-        <div class="w3-col m12">
-         
-          <!-- Headline -->
-          <h1 class="w3-text-white">Timeline</h1>
-          <div class="w3-card w3-round-xlarge post-bgc">
-            <div class="w3-container w3-padding">
-              {{#if error}}
-                <div class="error">
-                  <p>{{error}}</p>
-                </div>
-              {{/if}}
-              <!-- New Post -->
-              <h6 class="w3-opacity"></h6>
-              {{!-- <p contenteditable="true" class="w3-border w3-padding"></p> --}}
 
-              <form class="login-margin-top" action="/posts" method="post" id="new-post-form" enctype="multipart/form-data">
-                <textarea id="message" form="new-post-form" type="text" name="message" value="" placeholder="   What's on your mind?" rows="4"></textarea> <br>
-                <div class="post-buttons">
-                  <div class="post-buttons-left">
-                    <label for="img" class="new-post-link w3-button w3-theme w3-round-large" >
-                      Upload picture
-                    </label>
-                    <input id="img" type="file" name="image" accept="image/*" class="hidden">
-                  </div>
-                  <div class="post-buttons-right">
-                    <input id="post-button" type="submit" value="Post" name="upload" class="new-post-link w3-button w3-theme w3-round-large">
-                  </div>
-                </div>
-                <div class="flex-container">
-                  <img id="postpreview" src="" class="hidden">
-                </div>
-              </form>
-            </div>
+     <!-- New Post -->
+    <div class="grey-div">
+      {{#if error}}
+        <div class="error">
+          <p>{{error}}</p>
+        </div>
+      {{/if}}
+
+      <form action="/posts" method="post" id="new-post-form" enctype="multipart/form-data">
+        <textarea id="message" form="new-post-form" type="text" name="message" value="" placeholder="   What's on your mind?" rows="4"></textarea>
+
+        <div class="post-buttons">
+          <div class="post-buttons-left">
+            <label for="img" class="new-post-link w3-button w3-theme w3-round-large" >
+              Upload picture
+            </label>
+            <input id="img" type="file" name="image" accept="image/*" class="hidden">
+          </div>
+
+          <div class="post-buttons-right">
+            <input id="post-button" type="submit" value="Post" name="upload" class="new-post-link w3-button w3-theme w3-round-large">
           </div>
         </div>
-      </div>
-      
-      <!-- Posts Overview -->
-      {{#each posts}}
-      <div class="posts w3-container w3-card post-bgc w3-round-xlarge w3-margin">
-        <br>
+
+        <div class="flex-container">
+          <img id="postpreview" src="" class="hidden">
+        </div>
+      </form>     
+    </div>
+
+    <!-- All Posts -->
+    {{#each posts}}
+      <div class="grey-div posts">
         <div id="pic-name-container">
           <div class="profile-pic">
             {{#if this.user_id.profile_picture}}
-              <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src={{this.user_id.profile_picture}}> 
+              <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" src={{this.user_id.profile_picture}}> 
             {{else}}
-              <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src="/images/cutie-pie.jpeg">
+              <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" src="/images/cutie-pie.jpeg">
             {{/if}}
           </div>
-          <div id="user-name"><h4>{{this.user_id.name}}</h4></div>
+
+          <div id="user-name">
+            <h4>{{this.user_id.name}}</h4>
+          </div>
         </div>
-            
+
         <p>{{this.message}}</p>
+
         {{#if this.post_picture}}
-          <img class="posted-picture" src={{this.post_picture}}  />
+          <div class="photo-container">
+            <img class="posted-picture" src={{this.post_picture}}>
+          </div>
         {{/if}}
+
         <div class="comments-container">
           {{#if liked}}
             <form action='/likes?_method=DELETE' method='POST'>
@@ -85,40 +71,40 @@
               <input class="comments-buttons new-post-link w3-button w3-theme w3-margin-bottom w3-round-large like-button" type="submit" value="Like: {{this.likes.likes_array.length}}">
             </form> 
           {{/if}} 
-  {{!-- new div here --}}
+
           <div class="comments-section-container" id="comments-container">
               <div class="comments-container">
                 {{#each this.comments}}
                   <div class="comment-container">
                     <div class="comment-left">
-                        {{#if this.user_id.profile_picture}}
-                          <img class="w3-left w3-circle w3-margin-right" id="comment-pic" src={{this.user_id.profile_picture}}>
-                        {{else}}
-                          <img class="w3-left w3-circle w3-margin-right" id="comment-pic" src="/images/cutie-pie.jpeg">
-                        {{/if}}
+                      {{#if this.user_id.profile_picture}}
+                        <img class="w3-left w3-circle w3-margin-right" id="comment-pic" src={{this.user_id.profile_picture}}>
+                      {{else}}
+                        <img class="w3-left w3-circle w3-margin-right" id="comment-pic" src="/images/cutie-pie.jpeg">
+                      {{/if}}
                     </div>  
+
                     <div class="comment-right">
                       <div class="comment-author">{{this.user_id.name}}</div>
                       <div class="comment-text">{{this.comment}}</div>
                     </div> 
                   </div>
-                {{/each}}
-              </div>
+              {{/each}}
+            </div>
 
             <div class="comment-form-container">
               <form id="new-comment-form" action="/comments" method="post">
                 <input class="comments-input" id="comment-input" placeholder="  Comment" type="text" name="comment" value="" required>
                 <input id="post_id" name="post_id" type="hidden" value="{{this._id}}">
                 <input id="comment-button" class="comments-buttons new-post-link w3-button w3-round-large" type="submit" value="Comment">
-                {{!-- w3-theme for colour of the comment button --}}
               </form>
             </div>
           </div>
         </div>
-        
-{{!-- end new div here --}}
       </div>  
-        {{/each}}
+    {{/each}}
+  </div>
+</div>
 
 <script>
   img.onchange = evt => {
