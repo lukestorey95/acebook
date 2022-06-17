@@ -3,7 +3,7 @@
     <div class="list-all-users whole-page">
       <div class=class="users w3-container w3-card post-bgc w3-round-xlarge w3-margin">
         <h1>All Acebook Users</h1> 
-          <ul> 
+          <ul style="background-color:white;"> 
             {{#each users}}
               <li class="each-user">{{this.name}}</li><button>Send friend request</button>
             {{/each}}
@@ -13,11 +13,29 @@
   </div>
 
   <div>
-    <label for="friend-search">Find friends</label>
-    <input type="search" id="site-search" name="query">
-    <button>Find</button>
+    <div class="search-form">
+      <label for="friend-search">Find friends</label>
+      <input id="friend-search" name="query">
+      {{!-- <button>Find</button> --}}
+    </div>
+    <div class="search-result"><p id="search-result" style="background-color:white;"></p></div>
   </div>
+  <br><br><br>
+
+  {{users}}
+
+  <script>
+    console.log({{{users}}})
+
+    const inputEl = document.querySelector('#friend-search');
+
+    inputEl.addEventListener('input', (e) => {
+      document.querySelector('#search-result').textContent = e.target.value;
+    });
+  </script>
+
 </body>
+
 
 
 
