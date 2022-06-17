@@ -20,7 +20,7 @@ describe("Profile", () => {
 
     // upload image and submit form
     cy.get('input[type="file"]').attachFile("raccoon_1.jpg");
-    cy.get("#ppSubmit").click();
+    cy.get(".ppSubmit").click();
 
     // expect image is displayed
     // cy.get("#profile-photo")
