@@ -11,7 +11,10 @@ const ProfileController = {
         throw err;
       }
 
-      user.profileOwner = req.params.user_id == req.session.user_id
+      user.profileOwner = req.params.user_id === req.session.user._id
+      console.log(req.params.user_id)
+      console.log(req.session.user_id)
+      console.log(user.profileOwner)
 
       res.render("profile/index", {
         session: req.session.user,
