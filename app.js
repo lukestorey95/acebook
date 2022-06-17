@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 
 // middleware function to check for logged-in users
 const sessionChecker = (req, res, next) => {
-  if (!req.session.user && !req.cookies.user_sid) {
+  if (!req.session.user) {
     res.redirect("/sessions/new");
   } else {
     next();
