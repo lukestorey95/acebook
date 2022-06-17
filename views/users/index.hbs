@@ -27,12 +27,18 @@
 
               </div>
 
+              {{#if this.friended}}
               <div class="add-friends-button-row">
-                <form id="add-friend-form" action="/friends" method="post">
-                  <input id="user_id" name="user_id" type="hidden" value="{{this._id}}">
-                  <button id="add-friend-button" class="add-friend-button new-post-link w3-button w3-theme w3-margin-bottom w3-round-large">Add friend</button>
-                </form>
+                <p class="">You are friends</p>
               </div>
+              {{else}}
+                <div class="add-friends-button-row">
+                  <form id="add-friend-form" action="/friends" method="post">
+                    <input id="user_id" name="user_id" type="hidden" value="{{this._id}}">
+                    <button id="add-friend-button" class="add-friend-button new-post-link w3-button w3-theme w3-margin-bottom w3-round-large">Add friend</button>
+                  </form>
+                </div>
+              {{/if}}
 
             {{/each}}
           </div>

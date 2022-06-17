@@ -12,6 +12,10 @@ const UsersController = {
         const result = reversedUsers.filter((user) => {
           return user._id != req.session.user._id
         });
+
+        result.forEach((user) => {
+          user.friended = user.friends.includes(req.session.user._id);
+        });
         
         res.render("users/index", {
           session: req.session.user,
