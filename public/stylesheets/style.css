@@ -1,21 +1,17 @@
 /* -----------------GENERAL--------------------------------------------------- */
 
-/* General Setting */
-
-.comments-container {
-  display: flex;
-  flex-direction: row;
+* {
+  box-sizing: border-box;
 }
 
 .whole-page {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   height: 100vh;
   width: 100vw;
-  /* padding-top: 0vh; */
-  /* margin-left: 0px;
-  margin-right: 0px; */
-
+  padding-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .main-signup-boxes-container {
@@ -152,7 +148,6 @@
   background-color: linear-gradient(#09111f, #062d3b);
 }
 
-/* Overall Page Margins */
 html {
   -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100%
@@ -161,31 +156,14 @@ body {
   margin:0
 }
 
-.drop-down-comments {
-  display: block;
-}
-
-.comments {
-  border-style: 2px solid;
-  border-color: rgb(24, 93, 136);
-  background-color: rgba(255, 255, 255, 0.814);
-  border-radius: 6px;
-  padding: 5px;
-}
-
-.comments-input {
-  border-style: 2px solid;
-  border-color: rgb(24, 93, 136);
-  background-color: rgba(255, 255, 255, 0.814);
-  border-radius: 6px;
-  padding: 5px;
-}
-
-/* NavBar */
-.w3-top,.w3-bottom {
-  position:fixed;
-  width:100%;
-  z-index:1
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border: 1px solid;
+  margin: 10px 0px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
 }
 
 /* Font Stuff */
@@ -204,7 +182,43 @@ h1,h2,h3,h4,h5,h6{
   margin:10px 0
 }
 
-/* rounded corners */
+/* ----------------- Comments --------------------------------------------------- */
+
+.comments-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.drop-down-comments {
+  display: block;
+}
+
+.comments-buttons {
+  margin: 5px;
+}
+
+.comments {
+  border-style: 2px solid;
+  border-color: rgb(24, 93, 136);
+  background-color: rgba(255, 255, 255, 0.814);
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.comments-input {
+  border-style: 2px solid;
+  border-color: rgb(24, 93, 136);
+  background-color: rgba(255, 255, 255, 0.814);
+  border-radius: 6px;
+}
+
+/* ----------------- Navbar --------------------------------------------------- */
+.w3-top,.w3-bottom {
+  position:fixed;
+  width:100%;
+  z-index:1
+}
+
 .w3-round-small {
   border-radius:2px
 }
@@ -221,13 +235,11 @@ h1,h2,h3,h4,h5,h6{
   border-radius:32px
 }
 
-/* NavBar Text Align Right */
 .w3-right {
   float:right!important;
   transform: translateY(25%);
 }
 
-/* NavBar Size */
 .border {
   padding-right: 15px;
   right: -5%;
@@ -235,29 +247,20 @@ h1,h2,h3,h4,h5,h6{
   padding-bottom: 0px;
 }
 
-/* Button Colours */
 .w3-theme {
   color:#fff !important; 
   background-color:#607d8b !important
 }
 
 .login-margin-top {
-  margin-top:50px!important
+  margin-top:10px!important;
 }
 
-/* -----------------NAV BAR--------------------------------------------------- */
-
-/* NavBar Colour */
 .w3-theme-d2 {
   color:rgb(255, 255, 255) !important; 
-  /* color:rgb(42, 132, 144) !important;  */
-  /* background-color:#09111f !important; */
   background: -webkit-linear-gradient(#09111f, #09111feb)
-  /* background: linear-gradient(#fffffff7, #3dafafd4) */
-  /* border-bottom: 0.2px solid rgb(191, 191, 191); */
 }
 
-/* NavBar Size and Position */
 .w3-bar .w3-bar-item {
   padding:8px 22px;
   margin: 10px;
@@ -280,7 +283,6 @@ h1,h2,h3,h4,h5,h6{
   clear:both
 }
 
-/* NavBar Padding */
 .w3-padding-large {
   padding:12px 24px!important;
 }
@@ -292,6 +294,11 @@ h1,h2,h3,h4,h5,h6{
 }
 
 /* -----------------TIMELINE--------------------------------------------------- */
+
+.posted-picture {
+  width: 100%;
+  height: auto;
+}
 
 /* -----------------NAV BAR--------------------------------------------------- */
 /* TimeLine Headline Gradient */
@@ -310,7 +317,7 @@ h1 {
 
 @media (min-width:601px) {
   .w3-col.m3,.w3-quarter {
-    width:24.99999%
+    width:27.7%
   }
 .w3-col.m7 {
   width:58.33333% 
@@ -321,18 +328,27 @@ h1 {
 }
 }
 
+/* User name and photo */
+#pic-name-container {
+  display: flex;
+  align-items: center;
+}
+
+/* User name */
+h4 {
+  font-weight: 700;
+}
+
 /* Comment Box Spacing */
 /* Comment Box Line */
 hr {
   border:0;
-  /* border-top:1px solid #607d8b; */
   margin:20px 0
 }
 
 /* Posts Background Colour */
 .post-bgc {
   background: linear-gradient(#ffffff, #ffffffac);
-  /* background: linear-gradient(#ffffff, #ffffffac); */
 }
 
 /* New Post Button */
@@ -350,6 +366,54 @@ hr {
   white-space:nowrap
 }
 
+/* Post input */
+#message {
+  font-family: verdana, sans-serif;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(206, 206, 206);
+  resize: none;
+  margin-bottom: 10px;
+}
+
+#message::placeholder {
+  line-height: 70px; 
+}
+
+#postpreview {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 20px;
+}
+
+#input-button {
+  display: none;
+}
+
+.post-buttons {
+  display: flex;
+  width: 100%;
+}
+
+.post-buttons-left {
+  display: flex;
+  width: 50%;
+  justify-content: flex-start;
+}
+
+.post-buttons-right {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+#post-button {
+  font-size: 20px;
+}
+
+
 /* post profile pic */
 .w3-circle {
   border-radius: 50%;
@@ -358,22 +422,102 @@ hr {
   height: 80px;
 }
 
-/* Comment Box Sizing */
+.whole-page-timeline {
+  display: flex;
+  justify-content: center;
+  padding-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.timeline {
+  width: 40%;
+}
+
+/* -----------------Comments box--------------------------------------------------- */
+
+.likes-comments-container {
+  width: 100%;
+}
+
+#new-comment-form {
+  margin-bottom: 30px;
+}
+
+/* Comments & Form Container */
+.comments-section-container {
+  width: 97%;
+  padding: 0 1.5rem 0 1.5rem;
+  margin: auto;
+  border: solid 1px rgb(191, 190, 190); 
+  border-radius: 1rem;
+}
+.comment-form-container {
+  margin: 2rem 0 1rem 0;
+}
+
+#comment-input {
+  width: 75%;
+  height: 2rem;
+  border-radius: 25px;
+  border: none;
+  background-color: rgb(206, 206, 206);
+}
+
+#comment-button {
+  height: 2rem;
+  background-color: rgb(238, 236, 236);
+  font-weight: 600;
+}
+
+.comments-container {
+  display: block;
+}
+
+.comment-container {
+  margin: 1rem 0;
+  width: 100%;
+  border: solid 1px rgb(191, 190, 190); 
+  border-radius: 1rem;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 0.8rem;
+}
+
+.comment-right {
+  padding: 0.5rem;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-pic-container {
+  width: 60%;
+  margin: auto;
+  overflow: hidden;
+  border-radius:50%;
+}
+
+#comment-pic {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-top: 0.5rem;
+}
+
 .w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col {
   padding:0 8px
 }
 
-/* Comment Box Text Padding */
 .w3-container,.w3-panel {
   padding:0.01em 16px 
 }
 
-/* New Post Text Field Outline */
 .w3-border {
   border:1px solid #ccc!important
 }
 
-/* Comment Box Margins */
 .w3-margin {
   margin:16px!important
 }
@@ -384,17 +528,14 @@ hr {
   margin-bottom:16px!important
 }
 
-/* User Name in Comment Box */
 .w3-margin-right {
   margin-right:16px!important
 }
 
-/* Boxes Padding */
 .w3-padding {
   padding:8px 16px!important
 }
 
-/* Comment Box Internal Aligning */
 .w3-left {
   float:left!important
 }
@@ -432,22 +573,14 @@ body { background: linear-gradient(#09111f, #062d3b);}
   background: -webkit-linear-gradient(-45deg, #023d8ab6, #50d7d0bc );
 }
 
-.whole-page {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  padding-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
 
 /* -----------------Profile--------------------------------------------------- */
 
 .grey-div {
   background: linear-gradient(#ffffff, #ffffffac);
-  padding: 1em;
+  padding: 20px;
   border-radius: 16px;
+  margin: 20px;
 }
 
 .profile-grey-div {
@@ -495,10 +628,12 @@ body { background: linear-gradient(#09111f, #062d3b);}
 
 .profile {
   text-align: center;
+  width: 450px;
 }
 
 .main-title {
   padding-top: 4em;
+  text-align: center;
 }
 
 #profile-photo {
@@ -604,7 +739,18 @@ input.button {
   padding: 12.5px;
 }
 
+input.input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 .center {
+  text-align: center;
   display: flex;
   justify-content: center;
 }
@@ -684,4 +830,30 @@ input.button {
 
 #friends-align {
   text-align: center;
+}
+/* ----------------- Login & Signup --------------------------------------------------- */
+
+.login-signup {
+  flex-direction: column;
+  width: 350px;
+}
+
+.login-signup-submit {
+  font-size: 15px;
+  border: none;
+  display: inline-block;
+  padding: 10px 16px;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #fff;
+  background-color: #607d8b;
+  width: 100%;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.photo-container {
+  overflow: hidden;
+  max-height: 550px;
+  margin-bottom: 20px;
 }

@@ -1,7 +1,6 @@
 <div class="whole-page">
-
   <div>
-    <div class="profile main-title">
+    <div class="main-title">
       <h1>Profile</h1>
     </div>
 
@@ -14,23 +13,23 @@
       {{else}}
         <img id="profile-photo" src="/images/cutie-pie.jpeg" width="100" height="100"/>
       {{/if}}
+
     <div class="upload-profile-photo-form-div">
       <form id="upload-profile-photo-form" action="/profile" method="post" enctype="multipart/form-data">
         <div class="upload-pic-button-div">
           <label class="profile-button" for="img">Select Image</label>
-          {{!-- this one is a label and the one below is an input 
-          this has to be why the sizes are different -- tried it, it works
-          too tired to implement now... fix tomorrow, make sure it doesn't break
-          anything --}}
           <input type="file" id="img" name="image" accept="image/*" class="hidden" required> 
         </div>
+
       <div class="upload-pic-button-div">
         <label class="profile-button" for="ppSubmit">Update Profile</label>
         <input id="ppSubmit" class="hidden" type="submit" name="upload" value="Update Profile" >
       </div>
+
         <div class="flex-container">
           <img id="preview" src="" class="hidden">
         </div>
+
       </form>
     </div>
 
@@ -39,25 +38,22 @@
       <h2>Friends</h2>
 
       <div class="friends-flex-container">
-        {{!-- <div class="friends-flex-container2"> --}}
           {{#each user.friends}}
-        
-        {{!-- <div class="profile-friend-container"> --}}
             <div class="friend">
+
               <div class="friend-name">
-              {{this.name}}
+                {{this.name}}
               </div>
+
               <div class="friend-profile-pic">
-              {{#if this.profile_picture}}
-              <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src={{this.profile_picture}}> 
-            {{else}}
-              <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src="/images/cutie-pie.jpeg">
-            {{/if}}
+                {{#if this.profile_picture}}
+                  <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src={{this.profile_picture}}> 
+                {{else}}
+                  <img alt="Avatar" id="timeline-profile-photo" class="w3-left w3-circle w3-margin-right" style="width:80px" src="/images/cutie-pie.jpeg">
+                {{/if}}
+              </div>
             </div>
-            </div>
-            {{/each}}
-          {{!-- </div> --}}
-        {{!-- </div> --}}
+          {{/each}}
       </div>
     </div>
   </div>

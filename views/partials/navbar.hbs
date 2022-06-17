@@ -2,17 +2,16 @@
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 nav-bgc w3-left-align w3-medium border">
   {{#if session}}
-    <a href="/posts">
-      <img class="logo w3-bar-item" src="../images/acebook_logo.png" height="60" width="60" >
-    </a>
+  <a href="/posts">
+    <img class="logo w3-bar-item" src="../images/acebook_logo.png" height="60" width="60" >
+  </a>
   {{else}}
-    <a href="/">
-      <img class="logo w3-bar-item" src="../images/acebook_logo.png" height="60" width="60" >
-    </a>
+  <a href="/sessions/new">
+    <img class="logo w3-bar-item" src="../images/acebook_logo.png" height="60" width="60" >
+  </a>
   {{/if}}
-
-    <div class="w3-dropdown-hover w3-hide-small">
-    </div>
+  <div class="w3-dropdown-hover w3-hide-small">
+  </div>
 
   {{#if session}}
     <form action='/sessions?_method=DELETE' method='POST'>

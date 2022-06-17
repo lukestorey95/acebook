@@ -10,7 +10,7 @@ describe("Timeline", () => {
     // sign in
     cy.get("#email").type("test@example.com");
     cy.get("#password").type("password");
-    cy.get("#login").click();
+    cy.get("#login-button").click();
 
     // submit a post
     cy.contains("Post").click();
@@ -19,13 +19,12 @@ describe("Timeline", () => {
     cy.get("#new-post-form").submit();
 
     //comment on a post
-    cy.get("#drop-down").click();
     cy.get("#new-comment-form")
       .find('[type="text"]')
       .type("yet another comment");
     cy.get("#new-comment-form").submit();
-    cy.get("#drop-down").click();
+
     //expect
-    cy.get(".comments").first().should("contain", "yet another comment");
+    cy.get(".comment-text").first().should("contain", "yet another comment");
   });
 });
