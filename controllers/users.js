@@ -60,22 +60,13 @@ const UsersController = {
     // const friend = new User(req.body);
     // const friend = req.body; 
     //is the request whatever is sent via the post method to via the route that leads to AddFriend?
-    // User.findOne({_id: req.body.user_id}).exec((err, user) => {
-    //   if (err) {
-    //     throw err;
-    //   }
+    
   
       const filter = { _id: req.body.user_id };
       //filter = the id of the person the logged-in person wants to be friends with
       //filter = the target
       const update = {$push: {friends: req.session.user._id}};
-      //update = push the user id of the logged-in person (req.session.user._id) into the friends array
-      //how do we know which friends array? that info is in the filter - we've honed in on one target
-      //is the _id in user_id that we see in the update defined in the filter? or is that definition for
-      //the filter alone? Oh wait! It's defined in the database, right? The _id in the filter is defined
-      //based on the info in the post request (i.e. it's what we called user_id there), whereas the _id in the update refers
-      //to a target in the database - i.e. we're pushing the info found in the currently logged-in persons user table,
-      //specifically their _id 'column', to the friends 'column' of the desired friend. Need to check with the others 
+      //update = push the user id of the logged-in person (req.session.user._id) into the desired friend's friends array 
       User.findOneAndUpdate(filter, update, {new: true, useFindAndModify: false}, (err) => {
         if (err) {
           console.log(err);

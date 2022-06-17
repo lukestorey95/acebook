@@ -11,11 +11,11 @@
 
         <div class="add-friends-rows-container">
           {{#each users}}
-            <div id="add-friends-name-and-photo-row">
-              <div id="#add-friends-name-row">
+            <div class="add-friends-name-and-photo-row">
+              <div class="add-friends-name-row">
                 {{this.name}}
               </div>
-              <div id="add-friends-photo-row">
+              <div class="add-friends-photo-row">
               {{#if this.profile_picture}}
             <img alt="Avatar" id="timeline-profile-photo" class="w3-circle" style="width:80px" src={{this.profile_picture}}> 
           {{else}}
@@ -27,7 +27,7 @@
               
             </div>
             
-            <div id="add-friends-button-row">
+            <div class="add-friends-button-row">
               <form id="add-friend-form" action="/friends" method="post">
                 <input id="user_id" name="user_id" type="hidden" value="{{this._id}}">
                 {{!-- the value will constitute the request in the controller? --}}

@@ -567,7 +567,7 @@ input.button {
   flex-wrap: wrap;
 }
 
-#add-friends-name-and-photo-row {
+.add-friends-name-and-photo-row {
   display: flex;
   align-items: center; 
   justify-content: center;
@@ -579,12 +579,12 @@ input.button {
 
 }
 
-#add-friends-name-row {
+.add-friends-name-row {
   display: flex;
   justify-content: right;
 }
 
-#add-friends-button-row {
+.add-friends-button-row {
   display: flex; 
   height: 200px;
   padding-top: 5%;
