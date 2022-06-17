@@ -10,6 +10,9 @@ const ProfileController = {
       if (err) {
         throw err;
       }
+
+      user.profileOwner = req.params.user_id == req.session.user_id
+
       res.render("profile/index", {
         session: req.session.user,
         user: user,
