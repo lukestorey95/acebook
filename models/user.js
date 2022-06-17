@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema({
+
   name: {
     type: String,
     required: true,
@@ -16,6 +17,11 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   profile_picture: { type: String, default: null },
+
+  friends:[{
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "User",
+  }],
 });
 
 UserSchema.pre("save", function (next) {

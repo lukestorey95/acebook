@@ -6,10 +6,16 @@ const { uploadImage } = require("../utilities/cloudinaryUtil");
 const ProfileController = {
   Index: (req, res) => {
     const user = req.params.user_id;
-    User.findOne({ _id: user }).exec((err, user) => {
+    User.findOne({ _id: user }).populate("friends").exec((err, user) => {
       if (err) {
         throw err;
       }
+
+      user.profileOwner = req.params.user_id === req.session.user._id
+      console.log(req.params.user_id)
+      console.log(req.session.user_id)
+      console.log(user.profileOwner)
+
       res.render("profile/index", {
         session: req.session.user,
         user: user,
@@ -56,6 +62,7 @@ const ProfileController = {
           }
         );
       } catch (error) {
+        console.log(error);
         return res.json({ error: "Failed to upload" });
       }
     });

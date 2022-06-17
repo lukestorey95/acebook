@@ -80,21 +80,21 @@ describe("Post model", () => {
         expect(err).toBeNull();
 
         expect(posts[0]).toMatchObject({ message: "first message" });
+
+        post2.save((err) => {
+          expect(err).toBeNull();
+
+          Post.find((err, posts) => {
+            expect(err).toBeNull();
+
+            expect(posts.reverse()).toMatchObject([
+              { message: "second message" },
+              { message: "first message" },
+            ]);
+            done();
+          });
+        });
       });
-    });
-
-    post2.save((err) => {
-      expect(err).toBeNull();
-
-      Post.find((err, posts) => {
-        expect(err).toBeNull();
-
-        expect(posts.reverse()).toMatchObject([
-          { message: "second message" },
-          { message: "first message" },
-        ]);
-        done();
-      }); //.sort({message: -1}); - could be used instead of reverse();
     });
   });
 
